@@ -7,7 +7,5 @@ hadoopZip {
   base {
     from "build.gradle"
   }
-  zip("azkaban") {
-    from "buildZips.gradle"
-  }
+  zip("azkaban") {}
 }
