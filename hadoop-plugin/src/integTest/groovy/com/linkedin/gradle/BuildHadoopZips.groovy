@@ -28,11 +28,11 @@ class BuildHadoopZips extends Specification {
     /**
      * Integration test for including the sources zip and SCM metadata file in the Hadoop zip
      */
-    def 'buildHadoopZips'() {
+    def 'verify zip contents'() {
         given:
         def projectName = 'build-hadoop-zips'
         def version = '1.0.0'
-        buildDotGradle << this.class.classLoader.getResource('buildZips.gradle').text
+        buildDotGradle << this.class.classLoader.getResource('buildZips/buildZips.gradle').text
         settingsDotGradle << """rootProject.name='${projectName}'"""
         gradleDotProperties << """version=${version}"""
         GradleRunner runner = GradleRunner.create()
