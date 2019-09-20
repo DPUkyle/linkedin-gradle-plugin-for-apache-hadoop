@@ -72,7 +72,7 @@ class HadoopDslTestCase extends Specification {
         'missingRequiredParameters'  | false
         'propertySetChecks'          | false
         'propertySetCycles'          | false
-        'scope1'                     | false
+        'scope1'                     | false    //scope1-6 are severe enough failures that they abort the build entirely
         'scope2'                     | false
         'scope3'                     | false
         'scope4'                     | false
