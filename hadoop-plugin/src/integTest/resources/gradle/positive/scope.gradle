@@ -1,10 +1,6 @@
-buildscript {
-  dependencies {
-    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-  }
+plugins {
+  id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
-
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
 
 // Positive test case to support proper scoping in the DSL. You should be able to redefine DSL
 // elements within a nested scope that "hide" the element defined in the parent scope.

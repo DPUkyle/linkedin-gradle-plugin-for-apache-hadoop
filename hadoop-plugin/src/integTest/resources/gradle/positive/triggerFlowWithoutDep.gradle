@@ -1,16 +1,18 @@
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-    // Must manually specify snakeyaml and quartz-scheduler for testing, not required for users
-    classpath 'org.yaml:snakeyaml:1.18'
-    classpath 'org.quartz-scheduler:quartz:2.2.1'
-  }
-}
+//buildscript {
+//  repositories {
+//    jcenter()
+//  }
+//  dependencies {
+//    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
+//    // Must manually specify snakeyaml and quartz-scheduler for testing, not required for users
+//    classpath 'org.yaml:snakeyaml:1.18'
+//    classpath 'org.quartz-scheduler:quartz:2.2.1'
+//  }
+//}
 
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
+plugins {
+  id 'com.linkedin.gradle.hadoop.HadoopPlugin'
+}
 
 // Simple flow for testing trigger creation
 

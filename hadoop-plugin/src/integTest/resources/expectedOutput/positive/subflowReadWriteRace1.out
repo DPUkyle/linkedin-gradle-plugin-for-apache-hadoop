@@ -1,5 +1,3 @@
-:hadoop-plugin-test:test_subflowReadWriteRace1
-Running test for the file positive/subflowReadWriteRace1.gradle
 WorkflowJobChecker WARNING: Workflow flow1 does not declare any targets. Use the workflow targets method to declare the target jobs and subflows for the workflow.
 WorkflowJobChecker WARNING: Workflow flow1 does not contain any jobs or subflows. No job files will be built for this workflow.
 WorkflowJobChecker WARNING: Workflow flow2 does not declare any targets. Use the workflow targets method to declare the target jobs and subflows for the workflow.

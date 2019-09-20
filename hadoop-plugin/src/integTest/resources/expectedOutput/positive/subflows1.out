@@ -1,5 +1,3 @@
-:hadoop-plugin-test:test_subflows1
-Running test for the file positive/subflows1.gradle
 RequiredFieldsChecker WARNING: NoOpJob job1 does not declare any dependencies. It won't do anything.
 RequiredFieldsChecker WARNING: NoOpJob k1 does not declare any dependencies. It won't do anything.
 RequiredFieldsChecker WARNING: NoOpJob job1 does not declare any dependencies. It won't do anything.
