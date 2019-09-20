@@ -13,37 +13,34 @@ class HadoopDslTestCase extends Specification {
     TemporaryFolder tmp = new TemporaryFolder()
     def buildDotGradle
     def settingsDotGradle
-//    def gradleDotProperties
+    def testProfile
 
     def setup() {
         tmp.create()
         buildDotGradle = tmp.newFile('build.gradle') //<< this.class.classLoader.getResource('buildZips.gradle').text
         settingsDotGradle = tmp.newFile('settings.gradle')
-//        gradleDotProperties = tmp.newFile('gradle.properties')
+        def profilesDir = tmp.newFolder('src', 'main', 'profiles')
+        testProfile = new File(profilesDir, 'testProfile.gradle')
     }
 
     @Unroll
     def "Hadoop DSL test case for the file #filename"() {
         given:
+        testProfile << this.class.classLoader.getResource('gradle/testProfile.gradle').text
         def resourcePath = "gradle/${shouldPass ? 'positive' : 'negative'}/${filename}.gradle"
         buildDotGradle << this.class.classLoader.getResource(resourcePath).text
         def projectName = 'hadoop-plugin-test'
-//        def version = '1.0.0'
         settingsDotGradle << """rootProject.name='${projectName}'"""
-//        gradleDotProperties << """version=${version}"""
 
         when:
         GradleRunner runner = GradleRunner.create()
                 .withProjectDir(tmp.root)
                 .withPluginClasspath()
                 .withArguments('buildAzkabanFlows', '-is')
-//                .forwardOutput()
 
         BuildResult result = shouldPass ? runner.build() : runner.buildAndFail()
 
         then:
-//        def expectedOutcome = shouldPass ? TaskOutcome.SUCCESS : TaskOutcome.FAILED
-//        result.task(':buildAzkabanFlows').outcome == expectedOutcome
         def expectedOutputLines = this.class.classLoader.getResource("expectedOutput/${shouldPass ? 'positive' : 'negative'}/${filename}.out").readLines()
         expectedOutputLines.each { line ->
             assert result.output.contains(line)
@@ -65,9 +62,9 @@ class HadoopDslTestCase extends Specification {
         }
 
         where:
-        filename                     | shouldPass
-//        'applyProfile'               | true   //TODO special snowflake
-//        'applyUserProfile'           | true   //TODO special snowflake
+        filename                         | shouldPass
+        'applyProfile'                   | true
+        'applyUserProfile'               | true
         'azkabanZip'                     | true
         'basicFlow'                      | true
         'basicFlowMultiple'              | true
@@ -114,7 +111,7 @@ class HadoopDslTestCase extends Specification {
         'missingRequiredParameters'      | false
         'propertySetChecks'              | false
         'propertySetCycles'              | false
-        'scope1'                         | false  //scope1-6 are severe enough failures that they abort the build entirely
+        'scope1'                         | false
         'scope2'                         | false
         'scope3'                         | false
         'scope4'                         | false

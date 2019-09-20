@@ -2,8 +2,6 @@ plugins {
   id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
 
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
-
 definitionSet defs: [
   var1: "val1",
   var2: "val2"
@@ -21,7 +19,7 @@ hadoop {
 }
 
 // Test the Hadoop DSL applyUserProfile functions in which we'll override the definition sets declared.
-applyUserProfile profileName: "testProfile", profilePath: "src/main/profiles", skipProfile: false
+applyUserProfile profileName: "testProfile", skipProfile: false
 
 assert(lookupDef("var1") == "val1")
 assert(lookupDef("var2") == "val2_updated")
