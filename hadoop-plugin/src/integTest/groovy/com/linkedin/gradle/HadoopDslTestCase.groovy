@@ -73,7 +73,7 @@ class HadoopDslTestCase extends Specification {
         'basicFlowMultiple'              | true
         'basicFlowNotYaml'               | true
         'classes1'                       | true
-        'cloneJobWIthCondition'          | true
+        'cloneJobWithCondition'          | true
         'cloneLookup'                    | true
         'cloneSubflows'                  | true
         'closures'                       | true
@@ -97,6 +97,15 @@ class HadoopDslTestCase extends Specification {
         'namespaces'                     | true
         'propertyFiles1'                 | true
         'propertySet1'                   | true
+        'readWriteRace1'                 | true
+        'readWriteRace2'                 | true
+        'scope'                          | true
+        'subflowReadWriteRace1'          | true
+        'subflows1'                      | true
+        'triangleDependencies'           | true
+        'triggerFlow'                    | true
+        'triggerFlowWithoutDep'          | true
+        'workflows'                      | true
         'cycles2'                        | false
         'cycles1'                        | false
         'invalidFields'                  | false
