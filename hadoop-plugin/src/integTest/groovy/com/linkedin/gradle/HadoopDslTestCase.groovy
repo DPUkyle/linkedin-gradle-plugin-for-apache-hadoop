@@ -85,6 +85,10 @@ class HadoopDslTestCase extends Specification {
         'emergentFlow'                   | true
         'flowWithVariableSubstitution'   | true
         'fullyQualifiedLookup'           | true
+        'generateYamlOutputTwice'        | true
+        'groovy1'                        | true
+        'groupingWorkflows'              | true
+        'jobs1'                          | true
         'cycles2'                        | false
         'cycles1'                        | false
         'invalidFields'                  | false

@@ -1,5 +1,3 @@
-:hadoop-plugin-test:test_jobs1
-Running test for the file positive/jobs1.gradle
 JavaJob has been deprecated in favor of HadoopJavaJob or JavaProcessJob. Please change the job job6 to one of these classes.
 amMemory is deprecated in favor of setting 'tony.am.memory' in your properties block.
 amCores is deprecated in favor of setting 'tony.am.vcores' in your properties block.

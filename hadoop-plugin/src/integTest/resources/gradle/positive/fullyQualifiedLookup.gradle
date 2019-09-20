@@ -1,6 +1,7 @@
 plugins {
   id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
+
 // Positive test case for doing fully-qualified name lookups.
 pigJob('job1') {
   uses 'src/main/pig/pigScript.pig'
