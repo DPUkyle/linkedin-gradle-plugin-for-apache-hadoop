@@ -57,7 +57,9 @@ class HadoopDslTestCase extends Specification {
                     def expectedFile = this.class.classLoader.getResource("${expectedJobsPath}/${actualFile.name}")
                     // operations inside closure require explicit assert statements
                     assert expectedFile != null
-                    assert actualFile.text == expectedFile.text
+                    if (actualFile.isFile()) {
+                        assert actualFile.text == expectedFile.text
+                    }
                 }
             }
         }
@@ -66,34 +68,41 @@ class HadoopDslTestCase extends Specification {
         filename                     | shouldPass
 //        'applyProfile'               | true   //TODO special snowflake
 //        'applyUserProfile'           | true   //TODO special snowflake
-        'azkabanZip'                 | true
-        'basicFlow'                  | true
-        'basicFlowMultiple'          | true
-        'basicFlowNotYaml'           | true
-        'classes1'                   | true
-        'cloneJobWIthCondition'      | true
-        'cloneLookup'                | true
-        'cloneSubflows'              | true
-        'closures'                   | true
-        'conditionalFlow'            | true
-        'cycles2'                    | false
-        'cycles1'                    | false
-        'invalidFields'              | false
-        'invalidNames'               | false
-        'missingFields'              | false
-        'missingRequiredParameters'  | false
-        'propertySetChecks'          | false
-        'propertySetCycles'          | false
-        'scope1'                     | false  //scope1-6 are severe enough failures that they abort the build entirely
-        'scope2'                     | false
-        'scope3'                     | false
-        'scope4'                     | false
-        'scope5'                     | false
-        'scope6'                     | false
-        'subflowChecks1'             | false
-        'subflowCycles1'             | false
-        'triggerCheck'               | false
-        'workflowChecks'             | false
+        'azkabanZip'                     | true
+        'basicFlow'                      | true
+        'basicFlowMultiple'              | true
+        'basicFlowNotYaml'               | true
+        'classes1'                       | true
+        'cloneJobWIthCondition'          | true
+        'cloneLookup'                    | true
+        'cloneSubflows'                  | true
+        'closures'                       | true
+        'conditionalFlow'                | true
+        'definitionSet'                  | true
+        'embeddedConditionalFlow'        | true
+        'embeddedFlow'                   | true
+        'embeddedFlowWithBaseProperties' | true
+        'emergentFlow'                   | true
+        'flowWithVariableSubstitution'   | true
+        'fullyQualifiedLookup'           | true
+        'cycles2'                        | false
+        'cycles1'                        | false
+        'invalidFields'                  | false
+        'invalidNames'                   | false
+        'missingFields'                  | false
+        'missingRequiredParameters'      | false
+        'propertySetChecks'              | false
+        'propertySetCycles'              | false
+        'scope1'                         | false  //scope1-6 are severe enough failures that they abort the build entirely
+        'scope2'                         | false
+        'scope3'                         | false
+        'scope4'                         | false
+        'scope5'                         | false
+        'scope6'                         | false
+        'subflowChecks1'                 | false
+        'subflowCycles1'                 | false
+        'triggerCheck'                   | false
+        'workflowChecks'                 | false
     }
 
 }
