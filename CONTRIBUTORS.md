@@ -178,3 +178,6 @@ The following were contributed by Sayali Kadam.
 
 The following were contributed by Arjun Singh Bora.
 * `Add ability for Hadoop DSL to understand the WormholePushJob2 job type`
+
+[Kyle Moore](https://www.linkedin.com/in/dpukyle/) ([DPUkyle](https://github.com/DPUkyle)) contributed the following:
+* `Refactored Hadoop DSL "tests" into proper integration tests using Gradle TestKit`
