@@ -1,10 +1,6 @@
-buildscript {
-  dependencies {
-    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-  }
+plugins {
+  id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
-
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
 
 // Positive test case for using the clone-lookup pattern.
 

@@ -1,14 +1,3 @@
-//buildscript {
-//  repositories {
-//    jcenter()
-//  }
-//  dependencies {
-////    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-//    // Must manually specify snakeyaml for testing, not required for users
-//    classpath 'org.yaml:snakeyaml:1.18'
-//  }
-//}
-
 plugins {
   id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
