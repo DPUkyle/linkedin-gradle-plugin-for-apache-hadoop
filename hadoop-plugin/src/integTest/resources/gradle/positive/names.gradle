@@ -1,11 +1,6 @@
-buildscript {
-  dependencies {
-    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-  }
+plugins {
+  id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
-
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
-
 // Positive test for explicit name resolution in the DSL. This feature allows you to specify named
 // elements in the DSL with string names and define them later. For example, in the workflow below
 // we specify that the workflow names1 targets job1 before job1 is defined. At build time, all of

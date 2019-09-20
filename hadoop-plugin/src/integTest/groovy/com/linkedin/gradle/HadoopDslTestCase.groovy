@@ -89,6 +89,14 @@ class HadoopDslTestCase extends Specification {
         'groovy1'                        | true
         'groupingWorkflows'              | true
         'jobs1'                          | true
+        'loadPropsFlow'                  | true
+        'lookups'                        | true
+        'multiQuery'                     | true
+        'names'                          | true
+        'namespacedFlows'                | true
+        'namespaces'                     | true
+        'propertyFiles1'                 | true
+        'propertySet1'                   | true
         'cycles2'                        | false
         'cycles1'                        | false
         'invalidFields'                  | false

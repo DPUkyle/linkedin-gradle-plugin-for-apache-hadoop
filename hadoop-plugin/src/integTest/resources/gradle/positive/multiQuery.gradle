@@ -1,10 +1,6 @@
-buildscript {
-  dependencies {
-    classpath files("${project.pluginTestDir}/hadoop-plugin-${project.version}.jar", "${project.pluginTestDir}/hadoop-plugin-${project.version}-SNAPSHOT.jar")
-  }
+plugins {
+  id 'com.linkedin.gradle.hadoop.HadoopPlugin'
 }
-
-apply plugin: com.linkedin.gradle.hadoop.HadoopPlugin
 
 // Tests for HADOOP-7558. Tests multiple commands for a CommandJob.
 def commands = ['echo "hello"', 'echo "This is how one runs a command job"', 'whoami']
